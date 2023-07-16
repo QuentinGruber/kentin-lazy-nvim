@@ -1,7 +1,3 @@
--- Keymaps are automatically loaded on the VeryLazy event
--- Default keymaps that are always set: https://github.com/LazyVim/LazyVim/blob/main/lua/lazyvim/config/keymaps.lua
--- Add any additional keymaps here
-
 local function map(mode, lhs, rhs, opts)
   opts = opts or {}
   opts.silent = opts.silent ~= false
@@ -26,3 +22,16 @@ map(
   "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
   { desc = "Toggle comment lines" }
 )
+
+-- TODO: mutiple terminals
+-- TODO: pass a defaukt command to toggle_term_cmd example "nu"
+map("n", "<leader>tt", "<cmd>ToggleTerm nu<cr>", { desc = "Toggle terminal" })
+-- if vim.fn.executable "node" == 1 then
+--   map("n", "<leader>tn", "<cmd>:ToggleTerm node<cr>", { desc = "ToggleTerm node" })
+-- end
+-- local python = vim.fn.executable "python" == 1 and "python" or vim.fn.executable "python3" == 1 and "python3"
+-- if python then map("t", "<leader>tp", "<cmd>:ToggleTerm python<cr>", { desc = "ToggleTerm python" }) end
+map("n", "<leader>tf", "<cmd>:ToggleTerm direction=float nu<cr>", { desc = "ToggleTerm float" })
+map("n", "<leader>th", "<cmd>:ToggleTerm size=10 direction=horizontal nu<cr>",
+  { desc = "ToggleTerm horizontal split" })
+map("n", "<leader>tv", "<cmd>:ToggleTerm size=80 direction=vertical nu<cr>", { desc = "ToggleTerm vertical split" })
