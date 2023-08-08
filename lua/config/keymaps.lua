@@ -21,7 +21,8 @@ map(
   "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
   { desc = "Toggle comment lines" }
 )
-
+-- Zen
+map("n", "<leader>z", "<cmd>:ZenMode<cr>", { desc = "Toggle ZenMode" })
 
 -- Terminals
 
