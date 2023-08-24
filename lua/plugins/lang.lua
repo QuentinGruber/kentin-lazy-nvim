@@ -17,8 +17,7 @@ return {
         "json",
         "typescript",
         "rust",
-        "go",
-        "vue"
+        "go"
       },
     },
   },
@@ -31,9 +30,7 @@ return {
         "rust-analyzer",
         "gopls",
         "typescript-language-server",
-        "vue-language-server",
       },
     },
   },
 }
-
