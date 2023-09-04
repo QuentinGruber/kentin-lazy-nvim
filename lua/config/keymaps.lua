@@ -7,13 +7,6 @@ local function map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
--- tmux
-map("n", "<C-h>", "<cmd>:TmuxNavigateLeft<cr>", { desc = "TmuxNavigateLeft" })
-map("n", "<C-j>", "<cmd>:TmuxNavigateDown<cr>", { desc = "TmuxNavigateDown" })
-map("n", "<C-k>", "<cmd>:TmuxNavigateUp<cr>", { desc = "TmuxNavigateUp" })
-map("n", "<C-l>", "<cmd>:TmuxNavigateRight<cr>", { desc = "TmuxNavigateRight" })
-
--- splits
 map("n", "<leader>/", "<cmd>vsplit<cr>", { desc = "Comment" })
 map("n", "|", "<cmd>vsplit<cr>", { desc = "Vsplit" })
 map("n", "-", "<cmd>split<cr>", { desc = "Hsplit" })
@@ -31,6 +24,8 @@ map(
 -- Zen
 map("n", "<leader>z", "<cmd>:ZenMode<cr>", { desc = "Toggle ZenMode" })
 
+-- lsp
+map("n", "<leader>r", "<cmd>:LspRestart<cr>", { desc = "Restart Lsp server" })
 -- Terminals
 
 -- Base terminal
