@@ -21,6 +21,13 @@ map(
   "<esc><cmd>lua require('Comment.api').toggle.linewise(vim.fn.visualmode())<cr>",
   { desc = "Toggle comment lines" }
 )
+
+
+-- TMUX
+map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "TmuxNavigateLeft" })
+map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "TmuxNavigateDown" })
+map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "TmuxNavigateUp" })
+map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "TmuxNavigateRight" })
 -- Zen
 map("n", "<leader>z", "<cmd>:ZenMode<cr>", { desc = "Toggle ZenMode" })
 
@@ -43,4 +50,3 @@ end
 if vim.fn.executable "node" == 1 then
   map("n", "<leader>tn", function() createNodeTerm() end, { desc = "ToggleTerm node" })
 end
-
