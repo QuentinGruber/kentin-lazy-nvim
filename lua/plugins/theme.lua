@@ -1,10 +1,10 @@
 return {
-  { "bluz71/vim-nightfly-colors", name = "nightfly",   lazy = true },
-  { "navarasu/onedark.nvim",      name = "onedark" },
+  { "navarasu/onedark.nvim" },
+  { "EdenEast/nightfox.nvim" },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "onedark",
+      colorscheme = "nightfox",
     },
   },
 }
