@@ -22,6 +22,27 @@ map(
   { desc = "Toggle comment lines" }
 )
 
+-- OCTO
+-- pr
+map("n", "<leader>opl", "<cmd>Octo pr list<cr>", { desc = "Display open pr for this repo" })
+map("n", "<leader>opn", "<cmd>Octo pr create<cr>", { desc = "Create a new pr" })
+map("n", "<leader>opb", "<cmd>Octo pr checkout<cr>", { desc = "Checkout a pr" })
+map("n", "<leader>opd", "<cmd>Octo pr diff<cr>", { desc = "Show pr diff" })
+map("n", "<leader>opw", "<cmd>Octo pr browser<cr>", { desc = "Open pr in browser" })
+-- review
+map("n", "<leader>ors", "<cmd>Octo review start<cr>", { desc = "Start a review" })
+map("n", "<leader>orS", "<cmd>Octo review submit<cr>", { desc = "Submit a review" })
+map("n", "<leader>orr", "<cmd>Octo review resume<cr>", { desc = "Resume a review" })
+map("n", "<leader>orR", "<cmd>Octo review discard<cr>", { desc = "Dismiss a review" })
+-- comments
+map("n", "<leader>ocn", "<cmd>Octo comment add<cr>", { desc = "Add a comment" })
+map("n", "<leader>ocd", "<cmd>Octo comment delete<cr>", { desc = "Delete a comment" })
+map("n", "<leader>ocl", "<cmd>Octo review comments<cr>", { desc = "List pending comments" })
+
+-- issues
+map("n", "<leader>oil", "<cmd>Octo issue list<cr>", { desc = "Display open issues for this repo" })
+map("n", "<leader>oin", "<cmd>Octo issue create<cr>", { desc = "Create a new issue" })
+map("n", "<leader>oiw", "<cmd>Octo issue browser<cr>", { desc = "Open issue in browser" })
 
 -- TMUX
 map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "TmuxNavigateLeft" })
