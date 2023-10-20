@@ -28,6 +28,7 @@ map("n", "<leader>opl", "<cmd>Octo pr list<cr>", { desc = "Display open pr for t
 map("n", "<leader>opn", "<cmd>Octo pr create<cr>", { desc = "Create a new pr" })
 map("n", "<leader>opb", "<cmd>Octo pr checkout<cr>", { desc = "Checkout a pr" })
 map("n", "<leader>opd", "<cmd>Octo pr diff<cr>", { desc = "Show pr diff" })
+map("n", "<leader>opm", "<cmd>Octo pr merge<cr>", { desc = "merge pr" })
 map("n", "<leader>opw", "<cmd>Octo pr browser<cr>", { desc = "Open pr in browser" })
 -- review
 map("n", "<leader>ors", "<cmd>Octo review start<cr>", { desc = "Start a review" })
