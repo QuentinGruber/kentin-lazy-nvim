@@ -30,6 +30,7 @@ map("n", "<leader>opb", "<cmd>Octo pr checkout<cr>", { desc = "Checkout a pr" })
 map("n", "<leader>opd", "<cmd>Octo pr diff<cr>", { desc = "Show pr diff" })
 map("n", "<leader>opm", "<cmd>Octo pr merge<cr>", { desc = "merge pr" })
 map("n", "<leader>opw", "<cmd>Octo pr browser<cr>", { desc = "Open pr in browser" })
+map("n", "<leader>opc", "<cmd>Octo pr checks<cr>", { desc = "Display checks for this Pr" })
 -- review
 map("n", "<leader>ors", "<cmd>Octo review start<cr>", { desc = "Start a review" })
 map("n", "<leader>orS", "<cmd>Octo review submit<cr>", { desc = "Submit a review" })
@@ -72,3 +73,4 @@ end
 if vim.fn.executable "node" == 1 then
   map("n", "<leader>tn", function() createNodeTerm() end, { desc = "ToggleTerm node" })
 end
+
