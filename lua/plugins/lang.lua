@@ -1,12 +1,5 @@
 return {
 
-  { import = "lazyvim.plugins.extras.lang.rust" },
-
-  { import = "lazyvim.plugins.extras.lang.typescript" },
-
-  { import = "lazyvim.plugins.extras.lang.go" },
-
-
 
   -- add more treesitter parsers
   {

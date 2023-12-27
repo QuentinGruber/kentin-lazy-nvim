@@ -1,5 +1,4 @@
 return {
-  { import = "lazyvim.plugins.extras.coding.yanky" },
   {
     "numToStr/Comment.nvim",
     keys = {
@@ -12,3 +11,4 @@ return {
     end,
   },
 }
+
