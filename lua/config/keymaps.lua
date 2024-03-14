@@ -22,6 +22,9 @@ map(
   { desc = "Toggle comment lines" }
 )
 
+-- Modify config
+map("n", "<leader>²", "<cmd>:e $MYVIMRC <cr>", { desc = "Open nvim config" })
+
 -- OCTO
 -- pr
 map("n", "<leader>opl", "<cmd>Octo pr list<cr>", { desc = "Display open pr for this repo" })
@@ -73,4 +76,3 @@ end
 if vim.fn.executable "node" == 1 then
   map("n", "<leader>tn", function() createNodeTerm() end, { desc = "ToggleTerm node" })
 end
-
