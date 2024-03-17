@@ -1,3 +1,10 @@
+local harpoon = require("harpoon")
+
+-- REQUIRED
+harpoon:setup()
+-- REQUIRED
+
+
 local function map(mode, lhs, rhs, opts)
   opts = opts or {}
   opts.silent = opts.silent ~= false
@@ -24,6 +31,10 @@ map(
 
 -- Modify config
 map("n", "<leader>²", "<cmd>:e $MYVIMRC <cr>", { desc = "Open nvim config" })
+
+-- Harpoon
+map("n", "<leader>hh", function() harpoon.ui:toggle_quick_menu(harpoon:list()) end, { desc = "List all marked files" })
+map("n", "<leader>ha", function() harpoon:list():append() end, { desc = "Mark the file" })
 
 -- OCTO
 -- pr
