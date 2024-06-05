@@ -16,6 +16,10 @@ return {
     },
   },
 
+  -- Rust stuff
+  {
+    "Saecki/crates.nvim",
+  },
   -- add any tools you want to have installed below
   {
     "williamboman/mason.nvim",
