@@ -10,7 +10,8 @@ return {
         "json",
         "typescript",
         "rust",
-        "go"
+        "go",
+        "markdown"
       },
     },
   },
@@ -70,4 +71,3 @@ return {
     },
   }
 }
-
