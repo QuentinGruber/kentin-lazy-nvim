@@ -78,3 +78,11 @@ end
 if vim.fn.executable "node" == 1 then
   map("n", "<leader>tn", function() createNodeTerm() end, { desc = "ToggleTerm node" })
 end
+
+-- LazyGit 
+local function launchLazyGit()
+  require("toggleterm.terminal").Terminal:new({ cmd = "lazygit", hidden = true }):toggle();
+end
+if vim.fn.executable "node" == 1 then
+  map("n", "<leader>gg", function() launchLazyGit() end, { desc = "Launch lazygit" })
+end
