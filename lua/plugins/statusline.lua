@@ -29,6 +29,14 @@ return {
           return colors[status.status] or colors[""]
         end,
       })
+      table.insert(opts.sections.lualine_x, 3, {
+        function()
+          return require("neotime").getStatusLine()
+        end,
+        color = function()
+          return colors[""]
+        end,
+      })
     end,
   },
 }
