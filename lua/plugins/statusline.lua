@@ -31,7 +31,7 @@ return {
       })
       table.insert(opts.sections.lualine_x, 3, {
         function()
-          return require("neotime").getStatusLine()
+          return require("timewasted").getStatusLine()
         end,
         color = function()
           return colors[""]
