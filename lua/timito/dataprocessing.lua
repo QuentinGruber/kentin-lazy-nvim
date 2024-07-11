@@ -14,7 +14,6 @@ end
 function dataprocessing.get_data(fd)
   -- TODO: which size to use?
   local raw = uv.fs_read(fd, 2000)
-  vim.notify(raw)
   if raw == nil then
     vim.notify("raw is nil")
   end

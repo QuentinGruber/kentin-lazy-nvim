@@ -14,8 +14,6 @@ local function registerProgress()
   local diff = os.difftime(currentTime, lastTimeSave)
   local current_file = local_utils.get_current_file()
   local cwd = local_utils.get_current_dir()
-  local timeString = string.format("adding time: %02d to %s and dir %s", diff, current_file, cwd)
-  vim.notify(timeString)
   dataprocessing.write_new_data(cwd, diff)
   if currentTime ~= "" then
     dataprocessing.write_new_data(current_file, diff)
@@ -30,6 +28,11 @@ local function setup()
   vim.keymap.set("n", "<Leader>ts", "<cmd>Test<cr>")
   vim.api.nvim_create_user_command("ShowTime", displayTime, {})
   vim.api.nvim_create_user_command("Test", registerProgress, {})
+  vim.api.nvim_create_autocmd({ "BufLeave", "ExitPre" }, {
+    callback = function()
+      registerProgress()
+    end,
+  })
 end
 
 setup()
