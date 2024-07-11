@@ -5,8 +5,34 @@ local constants = require("timito.constants")
 local dataprocessing = require("timito.dataprocessing")
 
 local function displayTime()
-  -- TODO:
-  vim.notify("work")
+  local fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "r+", constants.RWD_FS)
+  local exitantData = dataprocessing.get_data(fd)
+
+  local buf = vim.api.nvim_create_buf(false, true) -- Create a new buffer, not listed, scratch buffer
+
+  local win_width = 100
+  local win_height = 20
+  local row = math.floor((vim.o.lines - win_height) / 2)
+  local col = math.floor((vim.o.columns - win_width) / 2)
+
+  local opts = {
+    style = "minimal",
+    relative = "editor",
+    width = win_width,
+    height = win_height,
+    row = row,
+    col = col,
+    border = "single",
+  }
+
+  local testo = {}
+  for index, value in ipairs(exitantData) do
+    local stringtoinsert = string.format("%s, Time: %d", value.path, value.time)
+    table.insert(testo, stringtoinsert)
+  end
+  vim.api.nvim_open_win(buf, true, opts)
+
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, testo)
 end
 
 local function registerProgress()
@@ -25,14 +51,12 @@ local function setup()
   uv.fs_mkdir(constants.NVIM_DATA_FOLDER_PATH, constants.RWD_FS)
   local fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "a", constants.RWD_FS)
   uv.fs_close(fd)
-  vim.keymap.set("n", "<Leader>ts", "<cmd>Test<cr>")
+  vim.keymap.set("n", "<Leader>ts", "<cmd>ShowTime<cr>")
   vim.api.nvim_create_user_command("ShowTime", displayTime, {})
-  vim.api.nvim_create_user_command("Test", registerProgress, {})
   vim.api.nvim_create_autocmd({ "BufLeave", "ExitPre" }, {
     callback = function()
       registerProgress()
     end,
   })
 end
-
 setup()
