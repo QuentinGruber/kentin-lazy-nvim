@@ -8,9 +8,6 @@ local function displayTime()
   -- TODO:
   vim.notify("work")
 end
-local function get_fd_file()
-  return uv.fs_open(constants.DATA_FILE_PROJECTS, "r+", constants.RWD_FS)
-end
 
 local function registerProgress()
   local currentTime = os.time()
@@ -19,8 +16,10 @@ local function registerProgress()
   local cwd = local_utils.get_current_dir()
   local timeString = string.format("adding time: %02d to %s and dir %s", diff, current_file, cwd)
   vim.notify(timeString)
-  local data = string.format("%s,%d\n", cwd, diff)
-  dataprocessing.write_data(constants.DATA_FILE_PROJECTS, data)
+  dataprocessing.write_new_data(cwd, diff)
+  if currentTime ~= "" then
+    dataprocessing.write_new_data(current_file, diff)
+  end
   lastTimeSave = os.time()
 end
 
@@ -28,7 +27,6 @@ local function setup()
   uv.fs_mkdir(constants.NVIM_DATA_FOLDER_PATH, constants.RWD_FS)
   local fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "a", constants.RWD_FS)
   uv.fs_close(fd)
-  dataprocessing.get_stored_data(get_fd_file())
   vim.keymap.set("n", "<Leader>ts", "<cmd>Test<cr>")
   vim.api.nvim_create_user_command("ShowTime", displayTime, {})
   vim.api.nvim_create_user_command("Test", registerProgress, {})

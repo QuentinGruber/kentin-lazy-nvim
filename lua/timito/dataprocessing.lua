@@ -5,8 +5,16 @@ local constants = require("timito.constants")
 local SavedTime = require("timito.savedTimeClass")
 
 local uv = vim.uv
-function dataprocessing.get_stored_data(fd)
+function dataprocessing.format(path, time)
+  return string.format("%s,%d", path, time)
+end
+function dataprocessing.get_fd_file()
+  return uv.fs_open(constants.DATA_FILE_PROJECTS, "r+", constants.RWD_FS)
+end
+function dataprocessing.get_data(fd)
+  -- TODO: which size to use?
   local raw = uv.fs_read(fd, 2000)
+  vim.notify(raw)
   if raw == nil then
     vim.notify("raw is nil")
   end
@@ -23,14 +31,40 @@ function dataprocessing.get_stored_data(fd)
         time = value
       end
     end
-    local st = SavedTime:new(path, time)
-    table.insert(sttable, st)
-    -- print(sttable)
-    -- vim.notify(st.path)
+    if path ~= "" then
+      local st = SavedTime:new(path, time)
+      table.insert(sttable, st)
+    end
   end
+  return sttable
 end
-function dataprocessing.write_data(path, data)
-  local fd = uv.fs_open(path, "a", constants.RWD_FS)
-  uv.fs_write(fd, data)
+function dataprocessing.encode_data(data)
+  local encoded_string = ""
+  for i, value in ipairs(data) do
+    local formattedvalue = dataprocessing.format(value.path, value.time)
+    -- TODO: shitty
+    encoded_string = string.format("%s\n%s", encoded_string, formattedvalue)
+  end
+  return encoded_string
+end
+function dataprocessing.write_new_data(path, time)
+  local fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "r+", constants.RWD_FS)
+  local exitantData = dataprocessing.get_data(fd)
+  local exist = false
+  for index, value in ipairs(exitantData) do
+    if value.path == path then
+      value:addTime(time)
+      exist = true
+    end
+  end
+  if exist == false then
+    local newsavedtime = SavedTime:new(path, time)
+    table.insert(exitantData, newsavedtime)
+  end
+  local encoded_string = dataprocessing.encode_data(exitantData)
+  uv.fs_close(fd)
+  fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "w+", constants.RWD_FS)
+  uv.fs_write(fd, encoded_string)
+  uv.fs_close(fd)
 end
 return dataprocessing
