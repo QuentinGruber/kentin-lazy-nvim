@@ -1,5 +1,8 @@
 return {
   {
+    "quentingruber/timewasted.nvim",
+  },
+  {
     "numToStr/Comment.nvim",
     keys = {
       { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
@@ -11,4 +14,3 @@ return {
     end,
   },
 }
-
