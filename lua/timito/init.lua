@@ -33,6 +33,8 @@ local function displayTime()
   vim.api.nvim_open_win(buf, true, opts)
 
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, testo)
+
+  vim.api.nvim_buf_set_keymap(buf, "n", "q", "<Cmd>bd!<CR>", { noremap = true, silent = true })
 end
 
 local function registerProgress()
