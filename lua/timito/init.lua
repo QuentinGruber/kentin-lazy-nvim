@@ -25,14 +25,19 @@ local function displayTime()
     border = "single",
   }
 
-  local testo = {}
+  local buff_lines = {}
+  -- Sorting by age in ascending order
+  table.sort(exitantData, function(a, b)
+    -- TODO: shitty it sould be a number per default and not that
+    return tonumber(a.time) > tonumber(b.time)
+  end)
   for index, value in ipairs(exitantData) do
     local stringtoinsert = string.format("%s, Time: %d", value.path, value.time)
-    table.insert(testo, stringtoinsert)
+    table.insert(buff_lines, stringtoinsert)
   end
   vim.api.nvim_open_win(buf, true, opts)
 
-  vim.api.nvim_buf_set_lines(buf, 0, -1, false, testo)
+  vim.api.nvim_buf_set_lines(buf, 0, -1, false, buff_lines)
 
   vim.api.nvim_buf_set_keymap(buf, "n", "q", "<Cmd>bd!<CR>", { noremap = true, silent = true })
 end
