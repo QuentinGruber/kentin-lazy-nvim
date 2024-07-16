@@ -1,8 +1,8 @@
-local local_utils = require("timito.utils")
+local local_utils = require("timespent.utils")
 
 local dataprocessing = {}
-local constants = require("timito.constants")
-local SavedTime = require("timito.savedTimeClass")
+local constants = require("timespent.constants")
+local SavedTime = require("timespent.savedTimeClass")
 
 local uv = vim.uv
 function dataprocessing.format(path, time)

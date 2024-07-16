@@ -1,8 +1,8 @@
 local uv = vim.uv
 local lastTimeSave = os.time()
-local local_utils = require("timito.utils")
-local constants = require("timito.constants")
-local dataprocessing = require("timito.dataprocessing")
+local local_utils = require("timespent.utils")
+local constants = require("timespent.constants")
+local dataprocessing = require("timespent.dataprocessing")
 local function formatTime(timesec)
   local hours = math.floor(timesec / 3600)
   local minutes = math.floor((timesec % 3600) / 60)
@@ -50,6 +50,7 @@ local function displayTime()
   vim.api.nvim_buf_set_lines(buf, 0, -1, false, buff_lines)
 
   vim.api.nvim_buf_set_keymap(buf, "n", "q", "<Cmd>bd!<CR>", { noremap = true, silent = true })
+  vim.api.nvim_buf_set_keymap(buf, "n", "d", "", { noremap = true, silent = true })
 end
 
 local function registerProgress()
