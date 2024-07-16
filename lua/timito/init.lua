@@ -3,7 +3,13 @@ local lastTimeSave = os.time()
 local local_utils = require("timito.utils")
 local constants = require("timito.constants")
 local dataprocessing = require("timito.dataprocessing")
+local function formatTime(timesec)
+  local hours = math.floor(timesec / 3600)
+  local minutes = math.floor((timesec % 3600) / 60)
+  local seconds = timesec % 60
 
+  return string.format("%02d:%02d:%02d", hours, minutes, seconds)
+end
 local function displayTime()
   local fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "r+", constants.RWD_FS)
   local exitantData = dataprocessing.get_data(fd)
@@ -35,7 +41,7 @@ local function displayTime()
     local firstChar = string.sub(value.path, 1, 1)
 
     if firstChar == "/" then
-      local stringtoinsert = string.format("%s, Time: %d", value.path, value.time)
+      local stringtoinsert = string.format("%s, Time: %s", value.path, formatTime(value.time))
       table.insert(buff_lines, stringtoinsert)
     end
   end
