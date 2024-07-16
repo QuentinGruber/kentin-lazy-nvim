@@ -32,8 +32,12 @@ local function displayTime()
     return tonumber(a.time) > tonumber(b.time)
   end)
   for index, value in ipairs(exitantData) do
-    local stringtoinsert = string.format("%s, Time: %d", value.path, value.time)
-    table.insert(buff_lines, stringtoinsert)
+    local firstChar = string.sub(value.path, 1, 1)
+
+    if firstChar == "/" then
+      local stringtoinsert = string.format("%s, Time: %d", value.path, value.time)
+      table.insert(buff_lines, stringtoinsert)
+    end
   end
   vim.api.nvim_open_win(buf, true, opts)
 
