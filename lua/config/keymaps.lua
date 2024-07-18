@@ -59,20 +59,23 @@ map("n", "<leader>z", "<cmd>:ZenMode<cr>", { desc = "Toggle ZenMode" })
 
 -- lsp
 map("n", "<leader>r", "<cmd>:LspRestart<cr>", { desc = "Restart Lsp server" })
+
+-- TimeSpent
+map("n", "<leader>ts", "<cmd>:ShowTime<cr>", { desc = "Restart Lsp server" })
 -- Terminals
 
 -- Base terminal
 map("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>tf", "<cmd>:ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" })
-map("n", "<leader>th", "<cmd>:ToggleTerm size=10 direction=horizontal<cr>",
-  { desc = "ToggleTerm horizontal split" })
+map("n", "<leader>th", "<cmd>:ToggleTerm size=10 direction=horizontal<cr>", { desc = "ToggleTerm horizontal split" })
 map("n", "<leader>tv", "<cmd>:ToggleTerm size=80 direction=vertical<cr>", { desc = "ToggleTerm vertical split" })
-
 
 -- Node
 local function createNodeTerm()
-  require("toggleterm.terminal").Terminal:new({ cmd = "node", hidden = true }):toggle();
+  require("toggleterm.terminal").Terminal:new({ cmd = "node", hidden = true }):toggle()
 end
-if vim.fn.executable "node" == 1 then
-  map("n", "<leader>tn", function() createNodeTerm() end, { desc = "ToggleTerm node" })
+if vim.fn.executable("node") == 1 then
+  map("n", "<leader>tn", function()
+    createNodeTerm()
+  end, { desc = "ToggleTerm node" })
 end

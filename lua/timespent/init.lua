@@ -85,7 +85,6 @@ local function setup()
     uv.fs_mkdir(constants.NVIM_DATA_FOLDER_PATH, constants.RWD_FS)
     local fd = uv.fs_open(constants.DATA_FILE_PROJECTS, "a", constants.RWD_FS)
     uv.fs_close(fd)
-    vim.keymap.set("n", "<Leader>ts", "<cmd>ShowTime<cr>")
     vim.api.nvim_create_user_command("ShowTime", displayTime, {})
     vim.api.nvim_create_autocmd({ "BufLeave", "ExitPre" }, {
         callback = function()
