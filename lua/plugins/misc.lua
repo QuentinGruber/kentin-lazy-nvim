@@ -3,6 +3,9 @@ return {
     "quentingruber/timewasted.nvim",
   },
   {
+    "nvim-lua/plenary.nvim",
+  },
+  {
     "quentingruber/timespent.nvim",
     dir = "~/Documents/timespent.nvim/",
     init = function()
