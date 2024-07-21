@@ -3,6 +3,12 @@ return {
     "quentingruber/timewasted.nvim",
   },
   {
+    "quentingruber/timespent.nvim",
+    init = function()
+      require("timespent").init()
+    end,
+  },
+  {
     "numToStr/Comment.nvim",
     keys = {
       { "gc", mode = { "n", "v" }, desc = "Comment toggle linewise" },
