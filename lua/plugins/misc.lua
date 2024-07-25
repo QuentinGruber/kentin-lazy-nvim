@@ -7,6 +7,7 @@ return {
   },
   {
     "quentingruber/timespent.nvim",
+    opts = {},
     -- dir = "~/Desktop/timespent.nvim/",
   },
   {
