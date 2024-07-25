@@ -7,10 +7,7 @@ return {
   },
   {
     "quentingruber/timespent.nvim",
-    dir = "~/Documents/timespent.nvim/",
-    init = function()
-      require("timespent").init()
-    end,
+    -- dir = "~/Desktop/timespent.nvim/",
   },
   {
     "numToStr/Comment.nvim",
