@@ -1,11 +1,11 @@
 return {
-  { "navarasu/onedark.nvim" },
-  -- { "sainnhe/sonokai" },
+  -- { "navarasu/onedark.nvim" },
+  { "sainnhe/sonokai" },
   {
     "LazyVim/LazyVim",
     opts = {
-      -- colorscheme = "sonokai",
-      colorscheme = "onedark",
+      colorscheme = "sonokai",
+      -- colorscheme = "onedark",
     },
   },
 }
