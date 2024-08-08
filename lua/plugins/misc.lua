@@ -7,8 +7,11 @@ return {
   },
   {
     "quentingruber/timespent.nvim",
+    keys = {
+      { "<leader>ts", "<cmd>:ShowTimeSpent<cr>", mode = { "n" }, desc = "Show time spent" },
+    },
     opts = {},
-    -- dir = "~/Desktop/timespent.nvim/",
+    dir = "~/Documents/timespent.nvim/",
   },
   {
     "numToStr/Comment.nvim",

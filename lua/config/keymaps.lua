@@ -61,7 +61,7 @@ map("n", "<leader>z", "<cmd>:ZenMode<cr>", { desc = "Toggle ZenMode" })
 map("n", "<leader>r", "<cmd>:LspRestart<cr>", { desc = "Restart Lsp server" })
 
 -- TimeSpent
-map("n", "<leader>ts", "<cmd>:ShowTimeSpent<cr>", { desc = "Show time spent" })
+-- map("n", "<leader>ts", "<cmd>:ShowTimeSpent<cr>", { desc = "Show time spent" })
 -- Terminals
 
 -- Base terminal
