@@ -11,7 +11,7 @@ return {
       { "<leader>ts", "<cmd>:ShowTimeSpent<cr>", mode = { "n" }, desc = "Show time spent" },
     },
     opts = {},
-    dir = "~/Documents/timespent.nvim/",
+    -- dir = "~/Documents/timespent.nvim/",
   },
   {
     "numToStr/Comment.nvim",
