@@ -7,6 +7,7 @@ return {
   },
   {
     "quentingruber/timespent.nvim",
+    lazy = false,
     keys = {
       { "<leader>ts", "<cmd>:ShowTimeSpent<cr>", mode = { "n" }, desc = "Show time spent" },
     },
@@ -15,6 +16,7 @@ return {
   },
   {
     "quentingruber/pomodoro.nvim",
+    lazy = false,
     dir = "~/Documents/pomodoro.nvim/",
     keys = {
       { "<leader>pu", "<cmd>:PomodoroUI<cr>", mode = { "n" }, desc = "" },
@@ -25,6 +27,7 @@ return {
       start_at_launch = true,
       work_duration = 25,
       break_duration = 5,
+      snooze_duration = 1, -- The additionnal work time you get when you delay a break
     },
   },
   {
