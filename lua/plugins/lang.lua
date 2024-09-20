@@ -1,6 +1,5 @@
 return {
 
-
   -- add more treesitter parsers
   {
     "nvim-treesitter/nvim-treesitter",
@@ -11,7 +10,7 @@ return {
         "typescript",
         "rust",
         "go",
-        "markdown"
+        "markdown",
       },
     },
   },
@@ -26,8 +25,6 @@ return {
     opts = {
       ensure_installed = {
         "rust-analyzer",
-        "gopls",
-        "typescript-language-server",
       },
     },
   },
@@ -73,5 +70,5 @@ return {
         },
       },
     },
-  }
+  },
 }
