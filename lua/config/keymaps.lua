@@ -50,10 +50,10 @@ map("n", "<leader>oin", "<cmd>Octo issue create<cr>", { desc = "Create a new iss
 map("n", "<leader>oiw", "<cmd>Octo issue browser<cr>", { desc = "Open issue in browser" })
 
 -- TMUX
-map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "TmuxNavigateLeft" })
-map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "TmuxNavigateDown" })
-map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "TmuxNavigateUp" })
-map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "TmuxNavigateRight" })
+-- map("n", "<C-h>", "<cmd>TmuxNavigateLeft<cr>", { desc = "TmuxNavigateLeft" })
+-- map("n", "<C-j>", "<cmd>TmuxNavigateDown<cr>", { desc = "TmuxNavigateDown" })
+-- map("n", "<C-k>", "<cmd>TmuxNavigateUp<cr>", { desc = "TmuxNavigateUp" })
+-- map("n", "<C-l>", "<cmd>TmuxNavigateRight<cr>", { desc = "TmuxNavigateRight" })
 -- Zen
 map("n", "<leader>z", "<cmd>:ZenMode<cr>", { desc = "Toggle ZenMode" })
 
