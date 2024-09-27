@@ -17,7 +17,7 @@ return {
   {
     "quentingruber/pomodoro.nvim",
     lazy = false,
-    dir = "~/Documents/pomodoro.nvim/",
+    -- dir = "~/Documents/pomodoro.nvim/",
     keys = {
       { "<leader>pu", "<cmd>:PomodoroUI<cr>", mode = { "n" }, desc = "" },
       { "<leader>ps", "<cmd>:PomodoroStart<cr>", mode = { "n" }, desc = "" },
