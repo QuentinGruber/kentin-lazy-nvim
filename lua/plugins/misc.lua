@@ -14,6 +14,9 @@ return {
     opts = {},
     -- dir = "~/Documents/timespent.nvim/",
   },
+  {
+    "tamton-aquib/duck.nvim",
+  },
   -- {
   --   "quentingruber/pomodoro.nvim",
   --   lazy = false,

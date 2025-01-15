@@ -62,8 +62,18 @@ map("n", "<leader>r", "<cmd>:LspRestart<cr>", { desc = "Restart Lsp server" })
 
 -- TimeSpent
 -- map("n", "<leader>ts", "<cmd>:ShowTimeSpent<cr>", { desc = "Show time spent" })
--- Terminals
 
+local function duck()
+  require("duck").hatch()
+end
+local function duck_cook()
+  require("duck").cook_all()
+end
+-- DUCK
+map("n", "<leader>dd", duck, { desc = "Duck" })
+map("n", "<leader>dc", duck_cook, { desc = "Rip Duck" })
+
+-- Terminals
 -- Base terminal
 map("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>tf", "<cmd>:ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" })
