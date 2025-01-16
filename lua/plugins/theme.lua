@@ -1,10 +1,16 @@
 return {
   -- { "navarasu/onedark.nvim" },
-  { "sainnhe/sonokai" },
+  -- { "sainnhe/sonokai" },
+  {
+    "scottmckendry/cyberdream.nvim",
+    lazy = false,
+    priority = 1000,
+  },
   {
     "LazyVim/LazyVim",
     opts = {
-      colorscheme = "sonokai",
+      -- colorscheme = "sonokai",
+      colorscheme = "cyberdream",
       -- colorscheme = "onedark",
     },
   },
