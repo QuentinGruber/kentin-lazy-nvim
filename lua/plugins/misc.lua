@@ -17,6 +17,11 @@ return {
   {
     "tamton-aquib/duck.nvim",
   },
+  {
+    "nvim-zh/colorful-winsep.nvim",
+    config = true,
+    event = { "WinLeave" },
+  },
   -- {
   --   "quentingruber/pomodoro.nvim",
   --   lazy = false,
