@@ -78,6 +78,27 @@ map("n", "<leader>tt", "<cmd>ToggleTerm<cr>", { desc = "Toggle terminal" })
 map("n", "<leader>tf", "<cmd>:ToggleTerm direction=float<cr>", { desc = "ToggleTerm float" })
 map("n", "<leader>th", "<cmd>:ToggleTerm size=10 direction=horizontal<cr>", { desc = "ToggleTerm horizontal split" })
 map("n", "<leader>tv", "<cmd>:ToggleTerm size=80 direction=vertical<cr>", { desc = "ToggleTerm vertical split" })
+-- map("t", "<C-h>", "<cmd>ToggleTerm<cr>", { desc = "Hide terminal" })
+-- map("t", "<C-l>", "<cmd>ToggleTerm<cr>", { desc = "Hide terminal" })
+map("t", "<C-h>", function()
+  if vim.fn.winheight(0) >= 40 then
+    -- If the window width is large, likely a vertical split, just switch windows
+    vim.cmd("wincmd h") -- Go to the left window in a vertical split
+  else
+    -- Otherwise, close or hide the terminal
+    vim.cmd("ToggleTerm")
+  end
+end, { desc = "Switch to left window or hide terminal" })
+
+map("t", "<C-l>", function()
+  if vim.fn.winheight(0) >= 40 then
+    -- If the window width is large, likely a vertical split, just switch windows
+    vim.cmd("wincmd l") -- Go to the left window in a vertical split
+  else
+    -- Otherwise, close or hide the terminal
+    vim.cmd("ToggleTerm")
+  end
+end, { desc = "Switch to left window or hide terminal" })
 
 -- Node
 local function createNodeTerm()
