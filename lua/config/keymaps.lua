@@ -7,7 +7,6 @@ local function map(mode, lhs, rhs, opts)
   vim.keymap.set(mode, lhs, rhs, opts)
 end
 
-map("n", "<leader>/", "<cmd>vsplit<cr>", { desc = "Comment" })
 map("n", "|", "<cmd>vsplit<cr>", { desc = "Vsplit" })
 map("n", "-", "<cmd>split<cr>", { desc = "Hsplit" })
 

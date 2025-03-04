@@ -5,15 +5,15 @@ return {
   {
     "nvim-lua/plenary.nvim",
   },
-  {
-    "quentingruber/timespent.nvim",
-    lazy = false,
-    keys = {
-      { "<leader>ts", "<cmd>:ShowTimeSpent<cr>", mode = { "n" }, desc = "Show time spent" },
-    },
-    opts = {},
-    -- dir = "~/Documents/timespent.nvim/",
-  },
+  -- {
+  --   "quentingruber/timespent.nvim",
+  --   lazy = false,
+  --   keys = {
+  --     { "<leader>ts", "<cmd>:ShowTimeSpent<cr>", mode = { "n" }, desc = "Show time spent" },
+  --   },
+  --   opts = {},
+  --   -- dir = "~/Documents/timespent.nvim/",
+  -- },
   {
     "tamton-aquib/duck.nvim",
   },

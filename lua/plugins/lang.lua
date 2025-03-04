@@ -11,6 +11,7 @@ return {
         "rust",
         "go",
         "markdown",
+        "vue",
       },
     },
   },
@@ -18,15 +19,6 @@ return {
   -- Rust stuff
   {
     "Saecki/crates.nvim",
-  },
-  -- add any tools you want to have installed below
-  {
-    "williamboman/mason.nvim",
-    opts = {
-      ensure_installed = {
-        "rust-analyzer",
-      },
-    },
   },
   {
     "neovim/nvim-lspconfig",
