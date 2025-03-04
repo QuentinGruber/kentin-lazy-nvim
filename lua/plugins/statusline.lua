@@ -29,15 +29,15 @@ return {
           return colors[status.status] or colors[""]
         end,
       })
-      -- table.insert(opts.sections.lualine_x, 3, {
-      --   function()
-      --     return require("timewasted").getStatusLine()
-      --   end,
-      --   color = function()
-      --     return colors[""]
-      --   end,
-      -- })
       table.insert(opts.sections.lualine_x, 3, {
+        function()
+          return require("timewasted").getStatusLine()
+        end,
+        color = function()
+          return colors[""]
+        end,
+      })
+      table.insert(opts.sections.lualine_x, 4, {
         function()
           return require("pomodoro").get_pomodoro_status()
         end,
