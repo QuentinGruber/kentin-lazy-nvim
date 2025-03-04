@@ -16,10 +16,6 @@ return {
     },
   },
 
-  -- Rust stuff
-  {
-    "Saecki/crates.nvim",
-  },
   {
     "neovim/nvim-lspconfig",
     opts = {
